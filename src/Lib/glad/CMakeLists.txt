@@ -1,0 +1,8 @@
+target_sources(glad
+PUBLIC
+    src/glad.c
+    "include/glad/glad.h"
+    "include/KHR/khrplatform.h"
+)
+
+target_include_directories(glad PUBLIC include/)
