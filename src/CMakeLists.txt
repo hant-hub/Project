@@ -27,6 +27,7 @@ target_sources(test PUBLIC
     shaders.h
     shaders.c)
 add_subdirectory(util)
+add_subdirectory(math)
 
 target_compile_options(test PRIVATE -Wall -Wextra -Werror)
 
