@@ -2,7 +2,7 @@ MATH:
     ☐ matricies
     ☐ matrix vector multiplication
     ☐ matrix matrix multiplication
-    ☐ arbitrary sized vectors/math
+    ✔ arbitrary sized vectors/math @done (8/7/2023, 7:52:34 PM)
 Textures:
     ☐ Image Loading
     ☐ Shader support

@@ -1,6 +1,6 @@
 #ifndef VECTOR_H
 #define VECTOR_H
-
+#include "../util/Error.h"
 
 //2D vectors
 
@@ -100,6 +100,35 @@ typedef struct vec4i {
 float vec4i_dot(vec4i a, vec4i b);
 vec4i vec4i_add(vec4i a, vec4i b);
 
+
+enum vector_Error{
+    IncorrectSizes = NoError+1
+};
+
+
+typedef struct vector_n_f {
+    unsigned short size;
+    float* components; 
+}vector_n_f;
+
+enum vector_Error vec_n_f_dot(float* out, vector_n_f* a, vector_n_f* b);
+enum vector_Error vec_n_f_add(vector_n_f* out, vector_n_f* a, vector_n_f* b);
+
+typedef struct vector_n_d {
+    unsigned short size;
+    double* components; 
+}vector_n_d;
+
+enum vector_Error vec_n_d_dot(float* out, vector_n_d* a, vector_n_d* b);
+enum vector_Error vec_n_d_add(vector_n_d* out, vector_n_d* a, vector_n_d* b);
+
+typedef struct vector_n_i {
+    unsigned short size;
+    int* components; 
+}vector_n_i;
+
+enum vector_Error vec_n_i_dot(float* out, vector_n_i* a, vector_n_i* b);
+enum vector_Error vec_n_i_add(vector_n_i* out, vector_n_i* a, vector_n_i* b);
 
 
 #endif

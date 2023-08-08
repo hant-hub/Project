@@ -15,7 +15,7 @@ vec2d vec2d_add(vec2d a, vec2d b) {
     return (vec2d){a.x + b.x, a.y + b.y};
 }
 
-int vec2i_dot(vec2i a, vec2i b) {
+float vec2i_dot(vec2i a, vec2i b) {
     return (a.x * b.x) + (a.y * b.y);
 }
 vec2i vec2i_add(vec2i a, vec2i b) {
@@ -86,4 +86,71 @@ float vec4i_dot(vec4i a, vec4i b) {
 }
 vec4i vec4i_add(vec4i a, vec4i b) {
     return (vec4i){a.x + b.x, a.y + b.y, a.z + b.z, a.w + b.w};
+}
+
+
+//n-vectors
+
+enum vector_Error vec_n_f_dot(float* out, vector_n_f* a, vector_n_f* b) {
+    if (a->size != b->size) return IncorrectSizes;
+
+    *out = 0.0f;
+    for (int i = 0; i < a->size; i++) {
+        *out += a->components[i] * b->components[i];
+    }
+    
+    return NoError;
+}
+enum vector_Error vec_n_f_add(vector_n_f* out, vector_n_f* a, vector_n_f* b) {
+    if (a->size != b->size) return IncorrectSizes;
+
+    out->size = a->size;
+    out->components = malloc(a->size * sizeof(float));
+    for (int i = 0; i < a->size; i++) {
+        out->components[i] = a->components[i] + b->components[i];
+    }
+
+    return NoError;
+}
+enum vector_Error vec_n_d_dot(float* out, vector_n_d* a, vector_n_d* b){
+    if (a->size != b->size) return IncorrectSizes;
+
+    *out = 0.0f;
+    for (int i = 0; i < a->size; i++) {
+        *out += a->components[i] * b->components[i];
+    }
+    
+    return NoError;
+}
+enum vector_Error vec_n_d_add(vector_n_d* out, vector_n_d* a, vector_n_d* b) {
+    if (a->size != b->size) return IncorrectSizes;
+
+    out->size = a->size;
+    out->components = malloc(a->size * sizeof(double));
+    for (int i = 0; i < a->size; i++) {
+        out->components[i] = a->components[i] + b->components[i];
+    }
+
+    return NoError;
+}
+enum vector_Error vec_n_i_dot(float* out, vector_n_i* a, vector_n_i* b){
+    if (a->size != b->size) return IncorrectSizes;
+
+    *out = 0.0f;
+    for (int i = 0; i < a->size; i++) {
+        *out += a->components[i] * b->components[i];
+    }
+    
+    return NoError;
+}
+enum vector_Error vec_n_i_add(vector_n_i* out, vector_n_i* a, vector_n_i* b) {
+    if (a->size != b->size) return IncorrectSizes;
+
+    out->size = a->size;
+    out->components = malloc(a->size * sizeof(int));
+    for (int i = 0; i < a->size; i++) {
+        out->components[i] = a->components[i] + b->components[i];
+    }
+
+    return NoError;
 }
