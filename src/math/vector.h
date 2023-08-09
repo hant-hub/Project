@@ -18,7 +18,7 @@ typedef struct vec2d {
     double y;
 } vec2d;
 
-float vec2d_dot(vec2d a, vec2d b);
+double vec2d_dot(vec2d a, vec2d b);
 vec2d vec2d_add(vec2d a, vec2d b);
 
 
@@ -27,7 +27,7 @@ typedef struct vec2i {
     int y;
 } vec2i;
 
-float vec2i_dot(vec2i a, vec2i b);
+int vec2i_dot(vec2i a, vec2i b);
 vec2i vec2i_add(vec2i a, vec2i b);
 
 //3D vectors
@@ -49,7 +49,7 @@ typedef struct vec3d {
     double z;
 } vec3d;
 
-float vec3d_dot(vec3d a, vec3d b);
+double vec3d_dot(vec3d a, vec3d b);
 vec3d vec3d_add(vec3d a, vec3d b);
 vec3d vec3d_cross(vec3d a, vec3d b);
 
@@ -60,7 +60,7 @@ typedef struct vec3i {
     int z;
 } vec3i;
 
-float vec3i_dot(vec3i a, vec3i b);
+int vec3i_dot(vec3i a, vec3i b);
 vec3i vec3i_add(vec3i a, vec3i b);
 vec3i vec3i_cross(vec3i a, vec3i b);
 
@@ -85,7 +85,7 @@ typedef struct vec4d {
     double w;
 } vec4d;
 
-float vec4d_dot(vec4d a, vec4d b);
+double vec4d_dot(vec4d a, vec4d b);
 vec4d vec4d_add(vec4d a, vec4d b);
 
 
@@ -97,7 +97,7 @@ typedef struct vec4i {
     int w;
 } vec4i;
 
-float vec4i_dot(vec4i a, vec4i b);
+int vec4i_dot(vec4i a, vec4i b);
 vec4i vec4i_add(vec4i a, vec4i b);
 
 
@@ -119,7 +119,7 @@ typedef struct vector_n_d {
     double* components; 
 }vector_n_d;
 
-enum vector_Error vec_n_d_dot(float* out, vector_n_d* a, vector_n_d* b);
+enum vector_Error vec_n_d_dot(double* out, vector_n_d* a, vector_n_d* b);
 enum vector_Error vec_n_d_add(vector_n_d* out, vector_n_d* a, vector_n_d* b);
 
 typedef struct vector_n_i {
@@ -127,7 +127,7 @@ typedef struct vector_n_i {
     int* components; 
 }vector_n_i;
 
-enum vector_Error vec_n_i_dot(float* out, vector_n_i* a, vector_n_i* b);
+enum vector_Error vec_n_i_dot(int* out, vector_n_i* a, vector_n_i* b);
 enum vector_Error vec_n_i_add(vector_n_i* out, vector_n_i* a, vector_n_i* b);
 
 

@@ -8,14 +8,14 @@ vec2f vec2f_add(vec2f a, vec2f b) {
     return (vec2f){a.x + b.x, a.y + b.y};
 }
 
-float vec2d_dot(vec2d a, vec2d b) {
+double vec2d_dot(vec2d a, vec2d b) {
     return (a.x * b.x) + (a.y * b.y);
 }
 vec2d vec2d_add(vec2d a, vec2d b) {
     return (vec2d){a.x + b.x, a.y + b.y};
 }
 
-float vec2i_dot(vec2i a, vec2i b) {
+int vec2i_dot(vec2i a, vec2i b) {
     return (a.x * b.x) + (a.y * b.y);
 }
 vec2i vec2i_add(vec2i a, vec2i b) {
@@ -38,7 +38,7 @@ vec3f vec3f_cross(vec3f a, vec3f b) {
     c.z = (a.x * b.y) - (a.y * b.x);
     return c;
 }
-float vec3d_dot(vec3d a, vec3d b) {
+double vec3d_dot(vec3d a, vec3d b) {
     return (a.x * b.x) + (a.y * b.y) + (a.z * b.z);
 }
 vec3d vec3d_add(vec3d a, vec3d b) {
@@ -52,7 +52,7 @@ vec3d vec3f_cross(vec3d a, vec3d b) {
     c.z = (a.x * b.y) - (a.y * b.x);
     return c;
 }
-float vec3i_dot(vec3i a, vec3i b) {
+int vec3i_dot(vec3i a, vec3i b) {
     return (a.x * b.x) + (a.y * b.y) + (a.z * b.z);
 }
 vec3i vec3i_add(vec3i a, vec3i b) {
@@ -75,13 +75,13 @@ float vec4f_dot(vec4f a, vec4f b) {
 vec4f vec4f_add(vec4f a, vec4f b) {
     return (vec4f){a.x + b.x, a.y + b.y, a.z + b.z, a.w + b.w};
 }
-float vec4d_dot(vec4d a, vec4d b) {
+double vec4d_dot(vec4d a, vec4d b) {
     return (a.x * b.x) + (a.y * b.y) + (a.z * b.z) + (a.w * b.w);
 }
 vec4d vec4d_add(vec4d a, vec4d b) {
     return (vec4d){a.x + b.x, a.y + b.y, a.z + b.z, a.w + b.w};
 }
-float vec4i_dot(vec4i a, vec4i b) {
+int vec4i_dot(vec4i a, vec4i b) {
     return (a.x * b.x) + (a.y * b.y) + (a.z * b.z) + (a.w * b.w);
 }
 vec4i vec4i_add(vec4i a, vec4i b) {
@@ -112,7 +112,7 @@ enum vector_Error vec_n_f_add(vector_n_f* out, vector_n_f* a, vector_n_f* b) {
 
     return NoError;
 }
-enum vector_Error vec_n_d_dot(float* out, vector_n_d* a, vector_n_d* b){
+enum vector_Error vec_n_d_dot(double* out, vector_n_d* a, vector_n_d* b){
     if (a->size != b->size) return IncorrectSizes;
 
     *out = 0.0f;
@@ -133,7 +133,7 @@ enum vector_Error vec_n_d_add(vector_n_d* out, vector_n_d* a, vector_n_d* b) {
 
     return NoError;
 }
-enum vector_Error vec_n_i_dot(float* out, vector_n_i* a, vector_n_i* b){
+enum vector_Error vec_n_i_dot(int* out, vector_n_i* a, vector_n_i* b){
     if (a->size != b->size) return IncorrectSizes;
 
     *out = 0.0f;

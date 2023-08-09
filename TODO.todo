@@ -1,6 +1,13 @@
 MATH:
-    ☐ matricies
+    ✔ matricies @done (8/8/2023, 9:56:57 PM)
     ☐ matrix vector multiplication
+        ☐ matrix2x2
+            ✔ float @done (8/8/2023, 9:57:46 PM)
+            ☐ double
+            ☐ int
+        ☐ matrix3x3
+        ☐ matrix4x4
+        ☐ matrixNxN
     ☐ matrix matrix multiplication
     ✔ arbitrary sized vectors/math @done (8/7/2023, 7:52:34 PM)
 Textures:
