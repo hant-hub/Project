@@ -1,5 +1,8 @@
 MATH:
-    ✔ matricies @done (8/8/2023, 9:56:57 PM)
+    ☐ matricies
+        ✔ add matrix types @done (8/11/2023, 11:50:01 PM)
+        ☐ SIMD?
+        ☐ Inline?
     ☐ matrix vector multiplication
         ✔ matrix2x2 @done (8/11/2023, 11:49:02 PM)
             ✔ float @done (8/8/2023, 9:57:46 PM)
