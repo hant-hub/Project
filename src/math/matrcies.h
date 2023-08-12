@@ -32,14 +32,14 @@ typedef struct matrix2x2i {
 } matrix2x2i;
 
 vec2i matrix2x2_vec2_multi(matrix2x2i* m, vec2i* v);
-matrix2x2d matrix2x2_compi(matrix2x2i* m1, matrix2x2i* m2);
+matrix2x2i matrix2x2_compi(matrix2x2i* m1, matrix2x2i* m2);
 int matrix2x2_deti(matrix2x2i* m);
 
 
 //3x3--------------------------------------------------------------------------
 
 typedef struct matrix3x3f {
-    float components[3][3][3];
+    float components[3][3];
 } matrix3x3f;
 
 vec3f matrix3x3_vec3_multf(matrix3x3f* m, vec3f* v);
@@ -47,7 +47,7 @@ matrix3x3f matrix3x3_compf(matrix3x3f* m1, matrix3x3f* m2);
 float matrix3x3_detf(matrix3x3f* m);
 
 typedef struct matrix3x3d {
-    double components[3][3][3];
+    double components[3][3];
 } matrix3x3d;
 
 vec3d matrix3x3_vec3_multd(matrix3x3d* m, vec3d* v);
@@ -55,7 +55,7 @@ matrix3x3d matrix3x3_compd(matrix3x3d* m1, matrix3x3d* m2);
 double matrix3x3_detd(matrix3x3d* m);
 
 typedef struct matrix3x3i {
-    int components[3][3][3];
+    int components[3][3];
 } matrix3x3i;
 
 vec3i matrix3x3_vec3_multi(matrix3x3i* m, vec3i* v);
@@ -64,7 +64,7 @@ int matrix3x3_deti(matrix3x3i* m);
 
 //4x4--------------------------------------------------------------------------
 typedef struct matrix4x4f {
-    float components[4][4][4][4];
+    float components[4][4];
 } matrix4x4f;
 
 vec4f matrix4x4_vec4_multf(matrix4x4f* m, vec4f* v);
@@ -72,7 +72,7 @@ matrix4x4f matrix4x4_compf(matrix4x4f* m1, matrix4x4f* m2);
 float matrix4x4_detf(matrix4x4f* m);
 
 typedef struct matrix4x4d {
-    double components[4][4][4][4];
+    double components[4][4];
 } matrix4x4d;
 
 vec4d matrix4x4_vec4_multd(matrix4x4d* m, vec4d* v);
@@ -80,11 +80,11 @@ matrix4x4d matrix4x4_compd(matrix4x4d* m1, matrix4x4d* m2);
 double matrix4x4_detd(matrix4x4d* m);
 
 typedef struct matrix4x4i {
-    int components[4][4][4][4];
+    int components[4][4];
 } matrix4x4i;
 
 vec4i matrix4x4_vec4_multi(matrix4x4i* m, vec4i* v);
-matrix3x3i matrix4x4_compi(matrix4x4i* m1, matrix4x4i* m2);
+matrix4x4i matrix4x4_compi(matrix4x4i* m1, matrix4x4i* m2);
 int matrix4x4_deti(matrix4x4i* m);
 
 
