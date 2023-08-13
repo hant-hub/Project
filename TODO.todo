@@ -12,9 +12,14 @@ MATH:
         ✔ matrix4x4 @done (8/11/2023, 11:49:03 PM)
         ☐ matrixNxN
             ✔ matrixmultf @done (8/11/2023, 11:49:18 PM)
-    ☐ matrix matrix multiplication
+            ✔ matrixcompf @done (8/12/2023, 5:43:30 PM)
+            ☐ matrixdetf
+            ✔ double versions @done (8/12/2023, 5:47:48 PM)
+            ✔ int versions @done (8/12/2023, 5:47:49 PM)
+    ✔ matrix matrix multiplication @done (8/12/2023, 5:47:52 PM)
     ✔ arbitrary sized vectors/math @done (8/7/2023, 7:52:34 PM)
 Textures:
+    ☐ obj files?
     ☐ Image Loading
     ☐ Shader support
     ☐ Sprites? (May try alternate abstractions)

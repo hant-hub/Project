@@ -325,18 +325,143 @@ int matrix4x4_deti(matrix4x4i* m) {
 
 //nxn ---------------------------------------------------------------------------------------------
 
+//out vector must be preallocated
 enum matrix_Error matrixNxN_vecN_multf(vector_n_f* out, matrixNxNf* m, vector_n_f* v) {
     if (out->size != v->size || m->size[0] != v->size) {
         return IncompatibleSizes;
     }
 
     vector_n_f temp = {m->size[0], 0};
-    for (int i; i < m->size[1]; i++) {
+    for (int i = 0; i < m->size[1]; i++) {
         temp.components = &(m->components[i]);
         vec_n_f_dot(&out->components[i], v, &temp);
     }
     
     return NoError;
 }
-enum matrix_Error matrixNxN_compf(matrixNxNf* out, matrixNxNf* m1, matrixNxNf* m2);
-enum matrix_Error matrixNxN_detf(float* out, matrixNxNf* m);
+//Out matrix must be preallocated
+//Note: if A is L x M
+//      if B is M x N
+//         C must be L x N
+enum matrix_Error matrixNxN_compf(matrixNxNf* out, matrixNxNf* m1, matrixNxNf* m2) {
+    if (m1->size[0]  != m2->size[1] || 
+        out->size[0] != m2->size[0] || 
+        out->size[1] != m1->size[1]) {
+
+        return IncompatibleSizes;
+    }
+
+
+    vector_n_f temp1 = {m2->size[1], 0};
+    vector_n_f temp2 = {m2->size[1], 0};
+    for (int i = 0; i < m2->size[0]; i++) {
+        temp1.components = &m2->components[i];
+        temp2.components = &out->components[i];
+        matrixNxN_vecN_multf(&temp2, m1, &temp1);
+    }
+}
+
+/*
+not right now -> in future plan to use either LU decomposition
+or possibly row echelon conversion to calculate for arbitrary matrix
+However I don't think this is necessary so I'm gonna move on.
+*/
+enum matrix_Error matrixNxN_detf(float* out, matrixNxNf* m) {
+
+}
+
+
+
+//out vector must be preallocated
+enum matrix_Error matrixNxN_vecN_multd(vector_n_d* out, matrixNxNd* m, vector_n_d* v) {
+    if (out->size != v->size || m->size[0] != v->size) {
+        return IncompatibleSizes;
+    }
+
+    vector_n_d temp = {m->size[0], 0};
+    for (int i = 0; i < m->size[1]; i++) {
+        temp.components = &(m->components[i]);
+        vec_n_d_dot(&out->components[i], v, &temp);
+    }
+    
+    return NoError;
+}
+//Out matrix must be preallocated
+//Note: if A is L x M
+//      if B is M x N
+//         C must be L x N
+enum matrix_Error matrixNxN_compd(matrixNxNd* out, matrixNxNd* m1, matrixNxNd* m2) {
+    if (m1->size[0]  != m2->size[1] || 
+        out->size[0] != m2->size[0] || 
+        out->size[1] != m1->size[1]) {
+
+        return IncompatibleSizes;
+    }
+
+
+    vector_n_d temp1 = {m2->size[1], 0};
+    vector_n_d temp2 = {m2->size[1], 0};
+    for (int i = 0; i < m2->size[0]; i++) {
+        temp1.components = &m2->components[i];
+        temp2.components = &out->components[i];
+        matrixNxN_vecN_multd(&temp2, m1, &temp1);
+    }
+}
+
+/*
+not right now -> in future plan to use either LU decomposition
+or possibly row echelon conversion to calculate for arbitrary matrix
+However I don't think this is necessary so I'm gonna move on.
+*/
+enum matrix_Error matrixNxN_detd(double* out, matrixNxNd* m) {
+
+}
+
+
+
+//out vector must be preallocated
+enum matrix_Error matrixNxN_vecN_multi(vector_n_i* out, matrixNxNi* m, vector_n_i* v) {
+    if (out->size != v->size || m->size[0] != v->size) {
+        return IncompatibleSizes;
+    }
+
+    vector_n_i temp = {m->size[0], 0};
+    for (int i = 0; i < m->size[1]; i++) {
+        temp.components = &(m->components[i]);
+        vec_n_i_dot(&out->components[i], v, &temp);
+    }
+    
+    return NoError;
+}
+//Out matrix must be preallocated
+//Note: if A is L x M
+//      if B is M x N
+//         C must be L x N
+enum matrix_Error matrixNxN_compi(matrixNxNi* out, matrixNxNi* m1, matrixNxNi* m2) {
+    if (m1->size[0]  != m2->size[1] || 
+        out->size[0] != m2->size[0] || 
+        out->size[1] != m1->size[1]) {
+
+        return IncompatibleSizes;
+    }
+
+
+    vector_n_i temp1 = {m2->size[1], 0};
+    vector_n_i temp2 = {m2->size[1], 0};
+    for (int i = 0; i < m2->size[0]; i++) {
+        temp1.components = &m2->components[i];
+        temp2.components = &out->components[i];
+        matrixNxN_vecN_multi(&temp2, m1, &temp1);
+    }
+}
+
+/*
+not right now -> in future plan to use either LU decomposition
+or possibly row echelon conversion to calculate for arbitrary matrix
+However I don't think this is necessary so I'm gonna move on.
+*/
+enum matrix_Error matrixNxN_deti(int* out, matrixNxNi* m) {
+
+}
+
+

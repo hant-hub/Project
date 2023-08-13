@@ -7,6 +7,7 @@
 //later possible use for inverting/arbitrary composition
 enum matrix_Error {
     IncompatibleSizes = NoError + 1,
+    NonSquareMatrix,
     UnInvertableMatrix
 };
 
