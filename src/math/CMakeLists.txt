@@ -1,1 +1,1 @@
-target_sources(test vector.h vector.c)
+target_sources(test PRIVATE vector.h vector.c matrices.h matrices.c PUBLIC math.h)

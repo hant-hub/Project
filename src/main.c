@@ -2,6 +2,7 @@
 #include "util/Error.h"
 #include "Colors.h"
 #include "util/file.h"
+#include "math/math.h"
 #include "window.h"
 #include "shaders.h"
 #include <stdio.h>
